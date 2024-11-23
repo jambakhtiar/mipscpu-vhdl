@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Wed Aug 28 11:56:46 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : MCU
+Top-level Entity Name : MCU
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 1837
+Total pins : 109
+Total virtual pins : 0
+Total block memory bits : 65,536
+Total DSP Blocks : 2
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

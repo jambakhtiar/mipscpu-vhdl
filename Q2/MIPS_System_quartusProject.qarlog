@@ -1,0 +1,41 @@
+Quartus Prime Archive log --	/home/jam/Downloads/MIPScpu/Q2/MIPS_System_quartusProject.qarlog
+
+Archive:	/home/jam/Downloads/MIPScpu/Q2/MIPS_System_quartusProject.qar
+Date:		Fri Aug 23 17:42:09 2024
+Quartus Prime		23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+	=========== Files Selected: ===========
+/home/jam/Downloads/MIPScpu/Q2/ewfaew.qpf
+/home/jam/Downloads/MIPScpu/Q2/ewfaew.qsf
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALUdecoder.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ControlUnit.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/MainDecoder.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_32b.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_5bits.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/PC.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Register_File.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/SignExtend.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/addr_decoder.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/alu_sum_res.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/displacement.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/mux_4_32b.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/prog_mem.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/zero_extend.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/ALU_add.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Frequency_Divider.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Top_Module.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/bus_interface.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/data_memory.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/debouncer.vhd
+/home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd
+/home/jam/altera/quartus/linux64/assignment_defaults.qdf
+	======= Total: 30 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

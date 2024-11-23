@@ -1,0 +1,1170 @@
+Analysis & Synthesis report for ewfaew
+Fri Aug 23 17:12:32 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Registers Added for RAM Pass-Through Logic
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for data_memory:data_mem_ins|altsyncram:mem_rtl_0|altsyncram_q5v1:auto_generated
+ 17. Source assignments for MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0|altsyncram_6ji1:auto_generated
+ 18. Source assignments for MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_1|altsyncram_6ji1:auto_generated
+ 19. Parameter Settings for Inferred Entity Instance: data_memory:data_mem_ins|altsyncram:mem_rtl_0
+ 20. Parameter Settings for Inferred Entity Instance: MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0
+ 21. Parameter Settings for Inferred Entity Instance: MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_1
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "Basic_Timer:BT_ins"
+ 24. Port Connectivity Checks: "addr_decoder:addr_dec_ins"
+ 25. Port Connectivity Checks: "MIPS:MIPS_Inst|Mux_2to1_32b:Mux_instru_j"
+ 26. Port Connectivity Checks: "MIPS:MIPS_Inst|ALU:Inst_ALU|alu_sum_res:Inst_alu_sum_res"
+ 27. Port Connectivity Checks: "MIPS:MIPS_Inst|ALU_add:ALU_add_4"
+ 28. Port Connectivity Checks: "MIPS:MIPS_Inst"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Aug 23 17:12:32 2024          ;
+; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                   ; ewfaew                                         ;
+; Top-level Entity Name           ; MIPS_System                                    ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 286                                            ;
+; Total pins                      ; 70                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 66,560                                         ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
+; Top-level entity name                                                           ; MIPS_System        ; ewfaew             ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                   ;
++------------------------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                             ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                          ; Library ;
++------------------------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+; ../project_1/project_1.srcs/sources_1/new/Frequency_Divider.vhd              ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Frequency_Divider.vhd              ;         ;
+; ../project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd                    ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd                    ;         ;
+; ../project_1/project_1.srcs/sources_1/new/debouncer.vhd                      ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/debouncer.vhd                      ;         ;
+; ../project_1/project_1.srcs/sources_1/new/sw_module.vhd                      ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd                      ;         ;
+; ../project_1/project_1.srcs/sources_1/new/MIPS_System.vhd                    ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd                    ;         ;
+; ../project_1/project_1.srcs/sources_1/new/MIPS.vhd                           ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd                           ;         ;
+; ../project_1/project_1.srcs/sources_1/new/LEDR.vhd                           ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd                           ;         ;
+; ../project_1/project_1.srcs/sources_1/new/HEX.vhd                            ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd                            ;         ;
+; ../project_1/project_1.srcs/sources_1/new/data_memory.vhd                    ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/data_memory.vhd                    ;         ;
+; ../project_1/project_1.srcs/sources_1/new/ALU_add.vhd                        ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/ALU_add.vhd                        ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/zero_extend.vhd    ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/zero_extend.vhd    ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/SignExtend.vhd     ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/SignExtend.vhd     ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/Register_File.vhd  ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Register_File.vhd  ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/prog_mem.vhd       ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/prog_mem.vhd       ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/PC.vhd             ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/PC.vhd             ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/mux_4_32b.vhd      ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/mux_4_32b.vhd      ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_5bits.vhd ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_5bits.vhd ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_32b.vhd   ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_32b.vhd   ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/MainDecoder.vhd    ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/MainDecoder.vhd    ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/displacement.vhd   ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/displacement.vhd   ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/ControlUnit.vhd    ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ControlUnit.vhd    ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/ALUdecoder.vhd     ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALUdecoder.vhd     ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/alu_sum_res.vhd    ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/alu_sum_res.vhd    ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd            ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd            ;         ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/addr_decoder.vhd   ; yes             ; User VHDL File                                        ; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/addr_decoder.vhd   ;         ;
+; altsyncram.tdf                                                               ; yes             ; Megafunction                                          ; /home/jam/altera/quartus/libraries/megafunctions/altsyncram.tdf                                       ;         ;
+; stratix_ram_block.inc                                                        ; yes             ; Megafunction                                          ; /home/jam/altera/quartus/libraries/megafunctions/stratix_ram_block.inc                                ;         ;
+; lpm_mux.inc                                                                  ; yes             ; Megafunction                                          ; /home/jam/altera/quartus/libraries/megafunctions/lpm_mux.inc                                          ;         ;
+; lpm_decode.inc                                                               ; yes             ; Megafunction                                          ; /home/jam/altera/quartus/libraries/megafunctions/lpm_decode.inc                                       ;         ;
+; aglobal231.inc                                                               ; yes             ; Megafunction                                          ; /home/jam/altera/quartus/libraries/megafunctions/aglobal231.inc                                       ;         ;
+; a_rdenreg.inc                                                                ; yes             ; Megafunction                                          ; /home/jam/altera/quartus/libraries/megafunctions/a_rdenreg.inc                                        ;         ;
+; altrom.inc                                                                   ; yes             ; Megafunction                                          ; /home/jam/altera/quartus/libraries/megafunctions/altrom.inc                                           ;         ;
+; altram.inc                                                                   ; yes             ; Megafunction                                          ; /home/jam/altera/quartus/libraries/megafunctions/altram.inc                                           ;         ;
+; altdpram.inc                                                                 ; yes             ; Megafunction                                          ; /home/jam/altera/quartus/libraries/megafunctions/altdpram.inc                                         ;         ;
+; db/altsyncram_q5v1.tdf                                                       ; yes             ; Auto-Generated Megafunction                           ; /home/jam/Downloads/MIPScpu/Q2/db/altsyncram_q5v1.tdf                                                 ;         ;
+; db/ewfaew.ram0_data_memory_8ae84398.hdl.mif                                  ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/jam/Downloads/MIPScpu/Q2/db/ewfaew.ram0_data_memory_8ae84398.hdl.mif                            ;         ;
+; db/altsyncram_6ji1.tdf                                                       ; yes             ; Auto-Generated Megafunction                           ; /home/jam/Downloads/MIPScpu/Q2/db/altsyncram_6ji1.tdf                                                 ;         ;
++------------------------------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 251       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 375       ;
+;     -- 7 input functions                    ; 4         ;
+;     -- 6 input functions                    ; 109       ;
+;     -- 5 input functions                    ; 66        ;
+;     -- 4 input functions                    ; 21        ;
+;     -- <=3 input functions                  ; 175       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 286       ;
+;                                             ;           ;
+; I/O pins                                    ; 70        ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 66560     ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 350       ;
+; Total fan-out                               ; 3702      ;
+; Average fan-out                             ; 4.13      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Entity Name       ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |MIPS_System                                 ; 375 (1)             ; 286 (0)                   ; 66560             ; 0          ; 70   ; 0            ; |MIPS_System                                                                                                     ; MIPS_System       ; work         ;
+;    |Basic_Timer:BT_ins|                      ; 80 (74)             ; 138 (133)                 ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|Basic_Timer:BT_ins                                                                                  ; Basic_Timer       ; work         ;
+;       |Frequency_Divider:FrqPreset_ins|      ; 6 (6)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|Basic_Timer:BT_ins|Frequency_Divider:FrqPreset_ins                                                  ; Frequency_Divider ; work         ;
+;    |MIPS:MIPS_Inst|                          ; 216 (0)             ; 94 (0)                    ; 1024              ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst                                                                                      ; MIPS              ; work         ;
+;       |ALU:Inst_ALU|                         ; 76 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|ALU:Inst_ALU                                                                         ; ALU               ; work         ;
+;          |Mux_2to1_32b:mux_b_b_compl|        ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|ALU:Inst_ALU|Mux_2to1_32b:mux_b_b_compl                                              ; Mux_2to1_32b      ; work         ;
+;          |alu_sum_res:Inst_alu_sum_res|      ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|ALU:Inst_ALU|alu_sum_res:Inst_alu_sum_res                                            ; alu_sum_res       ; work         ;
+;          |mux_4_32b:mux_rslt_alu|            ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|ALU:Inst_ALU|mux_4_32b:mux_rslt_alu                                                  ; mux_4_32b         ; work         ;
+;       |ALU_add:ALU_add_4|                    ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|ALU_add:ALU_add_4                                                                    ; ALU_add           ; work         ;
+;       |ControlUnit:Inst_ControlUnit|         ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|ControlUnit:Inst_ControlUnit                                                         ; ControlUnit       ; work         ;
+;          |ALUdecoder:Inst_ALUdecoder|        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|ControlUnit:Inst_ControlUnit|ALUdecoder:Inst_ALUdecoder                              ; ALUdecoder        ; work         ;
+;          |MainDecoder:Inst_MainDecoder|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|ControlUnit:Inst_ControlUnit|MainDecoder:Inst_MainDecoder                            ; MainDecoder       ; work         ;
+;       |Mux_2to1_32b:Inst3_Mux_2to1_32b|      ; 42 (42)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|Mux_2to1_32b:Inst3_Mux_2to1_32b                                                      ; Mux_2to1_32b      ; work         ;
+;       |Mux_2to1_5bits:Inst_Mux_rt_o_rd|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|Mux_2to1_5bits:Inst_Mux_rt_o_rd                                                      ; Mux_2to1_5bits    ; work         ;
+;       |PC:Inst_PC|                           ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|PC:Inst_PC                                                                           ; PC                ; work         ;
+;       |Register_File:Inst_Register_File|     ; 73 (73)             ; 78 (78)                   ; 1024              ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|Register_File:Inst_Register_File                                                     ; Register_File     ; work         ;
+;          |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 512               ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0                                ; altsyncram        ; work         ;
+;             |altsyncram_6ji1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 512               ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0|altsyncram_6ji1:auto_generated ; altsyncram_6ji1   ; work         ;
+;          |altsyncram:ram_rtl_1|              ; 0 (0)               ; 0 (0)                     ; 512               ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_1                                ; altsyncram        ; work         ;
+;             |altsyncram_6ji1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 512               ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_1|altsyncram_6ji1:auto_generated ; altsyncram_6ji1   ; work         ;
+;       |prog_mem:prog_mem_inst|               ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|MIPS:MIPS_Inst|prog_mem:prog_mem_inst                                                               ; prog_mem          ; work         ;
+;    |addr_decoder:addr_dec_ins|               ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|addr_decoder:addr_dec_ins                                                                           ; addr_decoder      ; work         ;
+;    |data_memory:data_mem_ins|                ; 1 (1)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |MIPS_System|data_memory:data_mem_ins                                                                            ; data_memory       ; work         ;
+;       |altsyncram:mem_rtl_0|                 ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |MIPS_System|data_memory:data_mem_ins|altsyncram:mem_rtl_0                                                       ; altsyncram        ; work         ;
+;          |altsyncram_q5v1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |MIPS_System|data_memory:data_mem_ins|altsyncram:mem_rtl_0|altsyncram_q5v1:auto_generated                        ; altsyncram_q5v1   ; work         ;
+;    |debouncer:key1_debounced|                ; 21 (21)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|debouncer:key1_debounced                                                                            ; debouncer         ; work         ;
+;    |debouncer:key2_debounced|                ; 21 (21)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|debouncer:key2_debounced                                                                            ; debouncer         ; work         ;
+;    |debouncer:key3_debounced|                ; 21 (21)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS_System|debouncer:key3_debounced                                                                            ; debouncer         ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                           ;
++----------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+---------------------------------------------+
+; Name                                                                                                           ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                         ;
++----------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+---------------------------------------------+
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0|altsyncram_6ji1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; None                                        ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_1|altsyncram_6ji1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024  ; None                                        ;
+; data_memory:data_mem_ins|altsyncram:mem_rtl_0|altsyncram_q5v1:auto_generated|ALTSYNCRAM                        ; AUTO ; Simple Dual Port ; 2048         ; 32           ; 2048         ; 32           ; 65536 ; db/ewfaew.ram0_data_memory_8ae84398.hdl.mif ;
++----------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                           ;
++----------------------------------------------------+---------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal             ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------------+------------------------+
+; Basic_Timer:BT_ins|PWMout                          ; Basic_Timer:BT_ins|BTCTL_reg[6] ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                                 ;                        ;
++----------------------------------------------------+---------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                      ;
++----------------------------------------------------------------------------+------------------------------------------------------------+
+; Register name                                                              ; Reason for Removal                                         ;
++----------------------------------------------------------------------------+------------------------------------------------------------+
+; MIPS:MIPS_Inst|PC:Inst_PC|dout[0]                                          ; Merged with MIPS:MIPS_Inst|PC:Inst_PC|dout[1]              ;
+; MIPS:MIPS_Inst|PC:Inst_PC|dout[1]                                          ; Stuck at GND due to stuck port data_in                     ;
+; MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[2,27]                           ; Merged with MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[31] ;
+; MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[4,6..10,13,15,18,20,23,25]      ; Merged with MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[28] ;
+; MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[16]                             ; Merged with MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[21] ;
+; MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[1,5,12]                         ; Merged with MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[14] ;
+; MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[0,11]                           ; Merged with MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[29] ;
+; MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[14]                             ; Merged with MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[24] ;
+; MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[17]                             ; Merged with MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[21] ;
+; MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[28]                             ; Stuck at GND due to stuck port data_in                     ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[5,6,9,10] ; Stuck at GND due to stuck port data_in                     ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[5,6,9,10] ; Stuck at GND due to stuck port data_in                     ;
+; MIPS:MIPS_Inst|PC:Inst_PC|dout[11..31]                                     ; Lost fanout                                                ;
+; Total Number of Removed Registers = 54                                     ;                                                            ;
++----------------------------------------------------------------------------+------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                         ;
++------------------------------------------------+---------------------------+------------------------------------------------------------------------+
+; Register name                                  ; Reason for Removal        ; Registers Removed due to This Register                                 ;
++------------------------------------------------+---------------------------+------------------------------------------------------------------------+
+; MIPS:MIPS_Inst|PC:Inst_PC|dout[1]              ; Stuck at GND              ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[6],   ;
+;                                                ; due to stuck port data_in ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[10],  ;
+;                                                ;                           ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[6],   ;
+;                                                ;                           ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[10],  ;
+;                                                ;                           ; MIPS:MIPS_Inst|PC:Inst_PC|dout[24], MIPS:MIPS_Inst|PC:Inst_PC|dout[25] ;
+; MIPS:MIPS_Inst|prog_mem:prog_mem_inst|dout[28] ; Stuck at GND              ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[5],   ;
+;                                                ; due to stuck port data_in ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[9],   ;
+;                                                ;                           ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[5],   ;
+;                                                ;                           ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[9]    ;
++------------------------------------------------+---------------------------+------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 286   ;
+; Number of registers using Synchronous Clear  ; 80    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 201   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 101   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                     ;
++--------------------------------------+------------------------------------+------+
+; Register Name                        ; Megafunction                       ; Type ;
++--------------------------------------+------------------------------------+------+
+; data_memory:data_mem_ins|dout[0..31] ; data_memory:data_mem_ins|mem_rtl_0 ; RAM  ;
++--------------------------------------+------------------------------------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                                                       ;
++----------------------------------------------------------------------+-----------------------------------------------------------+
+; Register Name                                                        ; RAM Name                                                  ;
++----------------------------------------------------------------------+-----------------------------------------------------------+
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[0]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[1]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[2]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[3]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[4]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[5]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[6]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[7]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[8]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[9]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[10] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[11] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[12] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[13] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[14] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[15] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[16] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[17] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[18] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[19] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[20] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[21] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[22] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[23] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[24] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[25] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[26] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[27] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[28] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[29] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[30] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[31] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[32] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[33] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[34] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[35] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[36] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[37] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[38] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[39] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[40] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[41] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0_bypass[42] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[0]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[1]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[2]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[3]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[4]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[5]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[6]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[7]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[8]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[9]  ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[10] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[11] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[12] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[13] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[14] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[15] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[16] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[17] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[18] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[19] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[20] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[21] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[22] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[23] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[24] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[25] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[26] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[27] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[28] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[29] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[30] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[31] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[32] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[33] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[34] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[35] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[36] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[37] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[38] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[39] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[40] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[41] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
+; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1_bypass[42] ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1 ;
++----------------------------------------------------------------------+-----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MIPS_System|debouncer:key1_debounced|counter[8]                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MIPS_System|debouncer:key2_debounced|counter[12]                        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MIPS_System|debouncer:key3_debounced|counter[0]                         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS_System|MIPS:MIPS_Inst|Register_File:Inst_Register_File|RD1[1]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS_System|MIPS:MIPS_Inst|Register_File:Inst_Register_File|RD2[27]     ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |MIPS_System|MIPS:MIPS_Inst|ALU:Inst_ALU|Mux_2to1_32b:mux_b_b_compl|O[4] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |MIPS_System|MIPS:MIPS_Inst|ALU:Inst_ALU|Mux_2to1_32b:mux_b_b_compl|O[5] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |MIPS_System|MIPS:MIPS_Inst|Mux_2to1_32b:Inst3_Mux_2to1_32b|O[8]         ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |MIPS_System|MIPS:MIPS_Inst|ALU:Inst_ALU|mux_4_32b:mux_rslt_alu|sal[9]   ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |MIPS_System|MIPS:MIPS_Inst|Mux_2to1_32b:Inst3_Mux_2to1_32b|O[7]         ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |MIPS_System|MIPS:MIPS_Inst|Mux_2to1_32b:Inst3_Mux_2to1_32b|O[0]         ;
+; 6:1                ; 20 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |MIPS_System|MIPS:MIPS_Inst|Mux_2to1_32b:Inst3_Mux_2to1_32b|O[27]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Source assignments for data_memory:data_mem_ins|altsyncram:mem_rtl_0|altsyncram_q5v1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------+
+; Assignment                      ; Value              ; From ; To                                    ;
++---------------------------------+--------------------+------+---------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                     ;
++---------------------------------+--------------------+------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0|altsyncram_6ji1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                           ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                            ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_1|altsyncram_6ji1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                           ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                            ;
++---------------------------------+--------------------+------+--------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_memory:data_mem_ins|altsyncram:mem_rtl_0    ;
++------------------------------------+---------------------------------------------+----------------+
+; Parameter Name                     ; Value                                       ; Type           ;
++------------------------------------+---------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                           ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                          ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                         ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                          ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                         ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                           ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT                                   ; Untyped        ;
+; WIDTH_A                            ; 32                                          ; Untyped        ;
+; WIDTHAD_A                          ; 11                                          ; Untyped        ;
+; NUMWORDS_A                         ; 2048                                        ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                        ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                        ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                        ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                        ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                        ; Untyped        ;
+; WIDTH_B                            ; 32                                          ; Untyped        ;
+; WIDTHAD_B                          ; 11                                          ; Untyped        ;
+; NUMWORDS_B                         ; 2048                                        ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                      ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                      ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK0                                      ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                      ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                      ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                        ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                        ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                        ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                        ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                        ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                        ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                           ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                           ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                        ; Untyped        ;
+; BYTE_SIZE                          ; 8                                           ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                    ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                        ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                        ; Untyped        ;
+; INIT_FILE                          ; db/ewfaew.ram0_data_memory_8ae84398.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                      ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                           ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                      ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                      ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                      ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                      ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                             ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                             ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                       ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                       ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                           ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V                                   ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_q5v1                             ; Untyped        ;
++------------------------------------+---------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                      ;
++------------------------------------+----------------------+-----------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                            ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                   ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                   ;
+; WIDTH_A                            ; 32                   ; Untyped                                                   ;
+; WIDTHAD_A                          ; 5                    ; Untyped                                                   ;
+; NUMWORDS_A                         ; 32                   ; Untyped                                                   ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                   ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                   ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                   ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                   ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                   ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                   ;
+; WIDTH_B                            ; 32                   ; Untyped                                                   ;
+; WIDTHAD_B                          ; 5                    ; Untyped                                                   ;
+; NUMWORDS_B                         ; 32                   ; Untyped                                                   ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                   ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                   ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                   ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                                   ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                   ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                   ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                   ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                   ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                   ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                   ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                   ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                   ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                   ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                   ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                   ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                   ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                   ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                   ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                   ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                   ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                   ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                   ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                   ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                   ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                   ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                   ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                   ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                   ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                   ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                   ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                   ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                   ;
+; CBXI_PARAMETER                     ; altsyncram_6ji1      ; Untyped                                                   ;
++------------------------------------+----------------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_1 ;
++------------------------------------+----------------------+-----------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                      ;
++------------------------------------+----------------------+-----------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                            ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                   ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                   ;
+; WIDTH_A                            ; 32                   ; Untyped                                                   ;
+; WIDTHAD_A                          ; 5                    ; Untyped                                                   ;
+; NUMWORDS_A                         ; 32                   ; Untyped                                                   ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                   ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                   ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                   ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                   ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                   ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                   ;
+; WIDTH_B                            ; 32                   ; Untyped                                                   ;
+; WIDTHAD_B                          ; 5                    ; Untyped                                                   ;
+; NUMWORDS_B                         ; 32                   ; Untyped                                                   ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                   ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                   ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                   ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                                   ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                   ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                   ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                   ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                   ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                   ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                   ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                   ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                   ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                                   ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                   ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                   ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                   ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                   ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                   ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                   ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                   ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                   ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                   ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                   ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                   ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                   ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                   ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                   ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                   ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                   ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                   ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                   ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                   ;
+; CBXI_PARAMETER                     ; altsyncram_6ji1      ; Untyped                                                   ;
++------------------------------------+----------------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                 ;
++-------------------------------------------+----------------------------------------------------------------------+
+; Name                                      ; Value                                                                ;
++-------------------------------------------+----------------------------------------------------------------------+
+; Number of entity instances                ; 3                                                                    ;
+; Entity Instance                           ; data_memory:data_mem_ins|altsyncram:mem_rtl_0                        ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                            ;
+;     -- WIDTH_A                            ; 32                                                                   ;
+;     -- NUMWORDS_A                         ; 2048                                                                 ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                         ;
+;     -- WIDTH_B                            ; 32                                                                   ;
+;     -- NUMWORDS_B                         ; 2048                                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                             ;
+; Entity Instance                           ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                            ;
+;     -- WIDTH_A                            ; 32                                                                   ;
+;     -- NUMWORDS_A                         ; 32                                                                   ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                         ;
+;     -- WIDTH_B                            ; 32                                                                   ;
+;     -- NUMWORDS_B                         ; 32                                                                   ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                            ;
+; Entity Instance                           ; MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_1 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                            ;
+;     -- WIDTH_A                            ; 32                                                                   ;
+;     -- NUMWORDS_A                         ; 32                                                                   ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                         ;
+;     -- WIDTH_B                            ; 32                                                                   ;
+;     -- NUMWORDS_B                         ; 32                                                                   ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                            ;
++-------------------------------------------+----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Basic_Timer:BT_ins"                                                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; set_btifg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "addr_decoder:addr_dec_ins"                                                                 ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; uctl_cs     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rxbf_cs     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; txbf_cs     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dividend_cs ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; divisor_cs  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; quotient_cs ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; residue_cs  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ie_cs       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ifg_cs      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; type_cs     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS:MIPS_Inst|Mux_2to1_32b:Mux_instru_j" ;
++---------+-------+----------+-----------------------------------------+
+; Port    ; Type  ; Severity ; Details                                 ;
++---------+-------+----------+-----------------------------------------+
+; b[1..0] ; Input ; Info     ; Stuck at GND                            ;
++---------+-------+----------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS:MIPS_Inst|ALU:Inst_ALU|alu_sum_res:Inst_alu_sum_res"                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS:MIPS_Inst|ALU_add:ALU_add_4" ;
++----------+-------+----------+--------------------------------+
+; Port     ; Type  ; Severity ; Details                        ;
++----------+-------+----------+--------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                   ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                   ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                   ;
++----------+-------+----------+--------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MIPS:MIPS_Inst"                                                                                ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; address[31..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 286                         ;
+;     CLR               ; 20                          ;
+;     CLR SCLR          ; 80                          ;
+;     ENA CLR           ; 101                         ;
+;     plain             ; 85                          ;
+; arriav_io_obuf        ; 56                          ;
+; arriav_lcell_comb     ; 375                         ;
+;     arith             ; 89                          ;
+;         1 data inputs ; 88                          ;
+;         2 data inputs ; 1                           ;
+;     extend            ; 4                           ;
+;         7 data inputs ; 4                           ;
+;     normal            ; 250                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 33                          ;
+;         4 data inputs ; 18                          ;
+;         5 data inputs ; 66                          ;
+;         6 data inputs ; 109                         ;
+;     shared            ; 32                          ;
+;         3 data inputs ; 29                          ;
+;         4 data inputs ; 3                           ;
+; boundary_port         ; 70                          ;
+; stratixv_ram_block    ; 96                          ;
+;                       ;                             ;
+; Max LUT depth         ; 10.80                       ;
+; Average LUT depth     ; 4.66                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Fri Aug 23 17:12:21 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ewfaew -c ewfaew
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Top_Module.vhd
+    Info (12022): Found design unit 1: Top_Module-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Top_Module.vhd Line: 17
+    Info (12023): Found entity 1: Top_Module File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Top_Module.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Frequency_Divider.vhd
+    Info (12022): Found design unit 1: Frequency_Divider-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Frequency_Divider.vhd Line: 14
+    Info (12023): Found entity 1: Frequency_Divider File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Frequency_Divider.vhd Line: 5
+Info (12021): Found 0 design units, including 0 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/bus_interface.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd
+    Info (12022): Found design unit 1: Basic_Timer-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd Line: 19
+    Info (12023): Found entity 1: Basic_Timer File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/debouncer.vhd
+    Info (12022): Found design unit 1: debouncer-behavior File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/debouncer.vhd Line: 14
+    Info (12023): Found entity 1: debouncer File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/debouncer.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd
+    Info (12022): Found design unit 1: sw_module-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd Line: 16
+    Info (12023): Found entity 1: sw_module File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd
+    Info (12022): Found design unit 1: MIPS_System-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 26
+    Info (12023): Found entity 1: MIPS_System File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd
+    Info (12022): Found design unit 1: MIPS-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 20
+    Info (12023): Found entity 1: MIPS File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd
+    Info (12022): Found design unit 1: LEDR-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 15
+    Info (12023): Found entity 1: LEDR File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd
+    Info (12022): Found design unit 1: HEX-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 15
+    Info (12023): Found entity 1: HEX File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/data_memory.vhd
+    Info (12022): Found design unit 1: data_memory-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/data_memory.vhd Line: 16
+    Info (12023): Found entity 1: data_memory File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/data_memory.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/ALU_add.vhd
+    Info (12022): Found design unit 1: ALU_add-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/ALU_add.vhd Line: 13
+    Info (12023): Found entity 1: ALU_add File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/ALU_add.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/zero_extend.vhd
+    Info (12022): Found design unit 1: zero_extend-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/zero_extend.vhd Line: 10
+    Info (12023): Found entity 1: zero_extend File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/zero_extend.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/SignExtend.vhd
+    Info (12022): Found design unit 1: SignExtend-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/SignExtend.vhd Line: 10
+    Info (12023): Found entity 1: SignExtend File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/SignExtend.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Register_File.vhd
+    Info (12022): Found design unit 1: Register_File-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Register_File.vhd Line: 18
+    Info (12023): Found entity 1: Register_File File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Register_File.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/prog_mem.vhd
+    Info (12022): Found design unit 1: prog_mem-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/prog_mem.vhd Line: 13
+    Info (12023): Found entity 1: prog_mem File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/prog_mem.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/PC.vhd
+    Info (12022): Found design unit 1: PC-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/PC.vhd Line: 12
+    Info (12023): Found entity 1: PC File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/PC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/mux_4_32b.vhd
+    Info (12022): Found design unit 1: mux_4_32b-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/mux_4_32b.vhd Line: 13
+    Info (12023): Found entity 1: mux_4_32b File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/mux_4_32b.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_5bits.vhd
+    Info (12022): Found design unit 1: Mux_2to1_5bits-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_5bits.vhd Line: 12
+    Info (12023): Found entity 1: Mux_2to1_5bits File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_5bits.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_32b.vhd
+    Info (12022): Found design unit 1: Mux_2to1_32b-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_32b.vhd Line: 12
+    Info (12023): Found entity 1: Mux_2to1_32b File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_32b.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/MainDecoder.vhd
+    Info (12022): Found design unit 1: MainDecoder-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/MainDecoder.vhd Line: 17
+    Info (12023): Found entity 1: MainDecoder File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/MainDecoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/displacement.vhd
+    Info (12022): Found design unit 1: displacement-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/displacement.vhd Line: 10
+    Info (12023): Found entity 1: displacement File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/displacement.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ControlUnit.vhd
+    Info (12022): Found design unit 1: ControlUnit-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ControlUnit.vhd Line: 18
+    Info (12023): Found entity 1: ControlUnit File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ControlUnit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALUdecoder.vhd
+    Info (12022): Found design unit 1: ALUdecoder-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALUdecoder.vhd Line: 11
+    Info (12023): Found entity 1: ALUdecoder File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALUdecoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/alu_sum_res.vhd
+    Info (12022): Found design unit 1: alu_sum_res-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/alu_sum_res.vhd Line: 14
+    Info (12023): Found entity 1: alu_sum_res File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/alu_sum_res.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd
+    Info (12022): Found design unit 1: ALU-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd Line: 13
+    Info (12023): Found entity 1: ALU File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/addr_decoder.vhd
+    Info (12022): Found design unit 1: addr_decoder-Behavioral File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/addr_decoder.vhd Line: 36
+    Info (12023): Found entity 1: addr_decoder File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/addr_decoder.vhd Line: 6
+Info (12127): Elaborating entity "MIPS_System" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(161): object "UCTL_cs" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 161
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(162): object "RXBF_cs" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 162
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(163): object "TXBF_cs" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 163
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(168): object "Dividend_cs" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 168
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(169): object "Divisor_cs" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 169
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(170): object "Quotient_cs" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 170
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(171): object "Residue_cs" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 171
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(172): object "IE_cs" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 172
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(173): object "IFG_cs" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 173
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(174): object "Type_cs" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 174
+Warning (10036): Verilog HDL or VHDL warning at MIPS_System.vhd(189): object "Set_BTIFG" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 189
+Info (12128): Elaborating entity "MIPS" for hierarchy "MIPS:MIPS_Inst" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 196
+Info (12128): Elaborating entity "ControlUnit" for hierarchy "MIPS:MIPS_Inst|ControlUnit:Inst_ControlUnit" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 162
+Info (12128): Elaborating entity "MainDecoder" for hierarchy "MIPS:MIPS_Inst|ControlUnit:Inst_ControlUnit|MainDecoder:Inst_MainDecoder" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ControlUnit.vhd Line: 45
+Info (12128): Elaborating entity "ALUdecoder" for hierarchy "MIPS:MIPS_Inst|ControlUnit:Inst_ControlUnit|ALUdecoder:Inst_ALUdecoder" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ControlUnit.vhd Line: 57
+Info (12128): Elaborating entity "PC" for hierarchy "MIPS:MIPS_Inst|PC:Inst_PC" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 176
+Info (12128): Elaborating entity "prog_mem" for hierarchy "MIPS:MIPS_Inst|prog_mem:prog_mem_inst" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 187
+Warning (10036): Verilog HDL or VHDL warning at prog_mem.vhd(37): object "addr" assigned a value but never read File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/prog_mem.vhd Line: 37
+Info (12128): Elaborating entity "ALU_add" for hierarchy "MIPS:MIPS_Inst|ALU_add:ALU_add_4" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 194
+Info (12128): Elaborating entity "Mux_2to1_5bits" for hierarchy "MIPS:MIPS_Inst|Mux_2to1_5bits:Inst_Mux_rt_o_rd" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 202
+Info (12128): Elaborating entity "Register_File" for hierarchy "MIPS:MIPS_Inst|Register_File:Inst_Register_File" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 211
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(36): signal "ram" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Register_File.vhd Line: 36
+Warning (10492): VHDL Process Statement warning at Register_File.vhd(39): signal "ram" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Register_File.vhd Line: 39
+Info (12128): Elaborating entity "ALU" for hierarchy "MIPS:MIPS_Inst|ALU:Inst_ALU" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 224
+Info (12128): Elaborating entity "Mux_2to1_32b" for hierarchy "MIPS:MIPS_Inst|ALU:Inst_ALU|Mux_2to1_32b:mux_b_b_compl" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd Line: 59
+Info (12128): Elaborating entity "alu_sum_res" for hierarchy "MIPS:MIPS_Inst|ALU:Inst_ALU|alu_sum_res:Inst_alu_sum_res" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd Line: 66
+Info (12128): Elaborating entity "zero_extend" for hierarchy "MIPS:MIPS_Inst|ALU:Inst_ALU|zero_extend:Inst_zero_extend" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd Line: 76
+Info (12128): Elaborating entity "mux_4_32b" for hierarchy "MIPS:MIPS_Inst|ALU:Inst_ALU|mux_4_32b:mux_rslt_alu" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd Line: 81
+Info (12128): Elaborating entity "SignExtend" for hierarchy "MIPS:MIPS_Inst|SignExtend:Inst_SignExtend" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 233
+Info (12128): Elaborating entity "displacement" for hierarchy "MIPS:MIPS_Inst|displacement:displacement_inst" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd Line: 245
+Info (12128): Elaborating entity "addr_decoder" for hierarchy "addr_decoder:addr_dec_ins" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 206
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:data_mem_ins" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 235
+Info (12128): Elaborating entity "LEDR" for hierarchy "LEDR:LEDR_ins" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 246
+Warning (10492): VHDL Process Statement warning at LEDR.vhd(27): signal "CS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 27
+Info (12128): Elaborating entity "HEX" for hierarchy "HEX:Hex0_ins" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 256
+Warning (10492): VHDL Process Statement warning at HEX.vhd(27): signal "CS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 27
+Info (12128): Elaborating entity "sw_module" for hierarchy "sw_module:sw_ins" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 303
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:key1_debounced" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 311
+Info (12128): Elaborating entity "Basic_Timer" for hierarchy "Basic_Timer:BT_ins" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd Line: 333
+Warning (10812): VHDL warning at Basic_Timer.vhd(121): sensitivity list already contains BTCCR0_reg File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd Line: 121
+Warning (10492): VHDL Process Statement warning at Basic_Timer.vhd(129): signal "BTCCR1_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd Line: 129
+Warning (10631): VHDL Process Statement warning at Basic_Timer.vhd(121): inferring latch(es) for signal or variable "PWMout", which holds its previous value in one or more paths through the process File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd Line: 121
+Info (10041): Inferred latch for "PWMout" at Basic_Timer.vhd(121) File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd Line: 121
+Info (12128): Elaborating entity "Frequency_Divider" for hierarchy "Basic_Timer:BT_ins|Frequency_Divider:FrqPreset_ins" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd Line: 82
+Warning (276020): Inferred RAM node "MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "MIPS:MIPS_Inst|prog_mem:prog_mem_inst|mem" is uninferred due to asynchronous read logic File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/prog_mem.vhd Line: 16
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "sw_module:sw_ins|sw_out[0]" feeding internal logic into a wire File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd Line: 12
+    Warning (13049): Converted tri-state buffer "sw_module:sw_ins|sw_out[1]" feeding internal logic into a wire File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd Line: 12
+    Warning (13049): Converted tri-state buffer "sw_module:sw_ins|sw_out[2]" feeding internal logic into a wire File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd Line: 12
+    Warning (13049): Converted tri-state buffer "sw_module:sw_ins|sw_out[3]" feeding internal logic into a wire File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd Line: 12
+    Warning (13049): Converted tri-state buffer "sw_module:sw_ins|sw_out[4]" feeding internal logic into a wire File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd Line: 12
+    Warning (13049): Converted tri-state buffer "sw_module:sw_ins|sw_out[5]" feeding internal logic into a wire File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd Line: 12
+    Warning (13049): Converted tri-state buffer "sw_module:sw_ins|sw_out[6]" feeding internal logic into a wire File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd Line: 12
+    Warning (13049): Converted tri-state buffer "sw_module:sw_ins|sw_out[7]" feeding internal logic into a wire File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd Line: 12
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_memory:data_mem_ins|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 2048
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 11
+        Info (286033): Parameter NUMWORDS_B set to 2048
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/ewfaew.ram0_data_memory_8ae84398.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+        Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "MIPS:MIPS_Inst|Register_File:Inst_Register_File|ram_rtl_1" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "data_memory:data_mem_ins|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "data_memory:data_mem_ins|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "11"
+    Info (12134): Parameter "NUMWORDS_B" = "2048"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/ewfaew.ram0_data_memory_8ae84398.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+    Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q5v1.tdf
+    Info (12023): Found entity 1: altsyncram_q5v1 File: /home/jam/Downloads/MIPScpu/Q2/db/altsyncram_q5v1.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6ji1.tdf
+    Info (12023): Found entity 1: altsyncram_6ji1 File: /home/jam/Downloads/MIPScpu/Q2/db/altsyncram_6ji1.tdf Line: 28
+Warning (13008): TRI or OPNDRN buffers permanently disabled
+    Warning (13010): Node "LEDR:LEDR_ins|LEDs[0]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 11
+    Warning (13010): Node "LEDR:LEDR_ins|LEDs[1]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 11
+    Warning (13010): Node "LEDR:LEDR_ins|LEDs[2]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 11
+    Warning (13010): Node "LEDR:LEDR_ins|LEDs[3]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 11
+    Warning (13010): Node "LEDR:LEDR_ins|LEDs[4]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 11
+    Warning (13010): Node "LEDR:LEDR_ins|LEDs[5]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 11
+    Warning (13010): Node "LEDR:LEDR_ins|LEDs[6]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 11
+    Warning (13010): Node "LEDR:LEDR_ins|LEDs[7]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd Line: 11
+    Warning (13010): Node "HEX:Hex0_ins|HEXout[0]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex0_ins|HEXout[1]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex0_ins|HEXout[2]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex0_ins|HEXout[3]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex0_ins|HEXout[4]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex0_ins|HEXout[5]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex0_ins|HEXout[6]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex0_ins|HEXout[7]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex1_ins|HEXout[0]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex1_ins|HEXout[1]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex1_ins|HEXout[2]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex1_ins|HEXout[3]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex1_ins|HEXout[4]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex1_ins|HEXout[5]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex1_ins|HEXout[6]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex1_ins|HEXout[7]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex2_ins|HEXout[0]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex2_ins|HEXout[1]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex2_ins|HEXout[2]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex2_ins|HEXout[3]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex2_ins|HEXout[4]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex2_ins|HEXout[5]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex2_ins|HEXout[6]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex2_ins|HEXout[7]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex3_ins|HEXout[0]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex3_ins|HEXout[1]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex3_ins|HEXout[2]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex3_ins|HEXout[3]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex3_ins|HEXout[4]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex3_ins|HEXout[5]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex3_ins|HEXout[6]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex3_ins|HEXout[7]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex4_ins|HEXout[0]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex4_ins|HEXout[1]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex4_ins|HEXout[2]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex4_ins|HEXout[3]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex4_ins|HEXout[4]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex4_ins|HEXout[5]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex4_ins|HEXout[6]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex4_ins|HEXout[7]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex5_ins|HEXout[0]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex5_ins|HEXout[1]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex5_ins|HEXout[2]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex5_ins|HEXout[3]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex5_ins|HEXout[4]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex5_ins|HEXout[5]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex5_ins|HEXout[6]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+    Warning (13010): Node "HEX:Hex5_ins|HEXout[7]" File: /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd Line: 11
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 21 registers lost all their fanouts during netlist optimizations.
+Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_1|altsyncram_6ji1:auto_generated|ALTSYNCRAM" File: /home/jam/Downloads/MIPScpu/Q2/db/altsyncram_6ji1.tdf Line: 38
+Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "MIPS:MIPS_Inst|Register_File:Inst_Register_File|altsyncram:ram_rtl_0|altsyncram_6ji1:auto_generated|ALTSYNCRAM" File: /home/jam/Downloads/MIPScpu/Q2/db/altsyncram_6ji1.tdf Line: 38
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 728 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 57 output pins
+    Info (21061): Implemented 562 logic cells
+    Info (21064): Implemented 96 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 88 warnings
+    Info: Peak virtual memory: 498 megabytes
+    Info: Processing ended: Fri Aug 23 17:12:32 2024
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:24
+
+

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Aug 23 16:51:59 2024
+# Process ID: 78687
+# Current directory: /home/jam/Downloads/MIPScpu/project_1/project_1.runs/synth_1
+# Command line: vivado -log Basic_Timer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Basic_Timer.tcl
+# Log file: /home/jam/Downloads/MIPScpu/project_1/project_1.runs/synth_1/Basic_Timer.vds
+# Journal file: /home/jam/Downloads/MIPScpu/project_1/project_1.runs/synth_1/vivado.jou
+# Running On: jam-Precision-5510, OS: Linux, CPU Frequency: 3207.078 MHz, CPU Physical cores: 4, Host memory: 16397 MB
+#-----------------------------------------------------------
+source Basic_Timer.tcl -notrace

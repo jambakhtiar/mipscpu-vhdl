@@ -1,0 +1,133 @@
+Archive Project report for ewfaew
+Fri Aug 23 17:42:09 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Fri Aug 23 17:42:09 2024 ;
+; Revision Name          ; ewfaew                                ;
+; Top-level Entity Name  ; MIPS_System                           ;
+; Family                 ; Cyclone V                             ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory /home/jam/Downloads/MIPScpu/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive '/home/jam/Downloads/MIPScpu/Q2/MIPS_System_quartusProject.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'ewfaew.archive.rpt'
+Info (23030): Evaluation of Tcl script /home/jam/altera/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 572 megabytes
+    Info: Processing ended: Fri Aug 23 17:42:09 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++-------------------------------------------------------------------------------------------------------+
+; Files Archived                                                                                        ;
++-------------------------------------------------------------------------------------------------------+
+; File Name                                                                                             ;
++-------------------------------------------------------------------------------------------------------+
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/addr_decoder.vhd                            ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd                                     ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/alu_sum_res.vhd                             ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/ALUdecoder.vhd                              ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/ControlUnit.vhd                             ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/displacement.vhd                            ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/MainDecoder.vhd                             ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_5bits.vhd                          ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_32b.vhd                            ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/mux_4_32b.vhd                               ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/PC.vhd                                      ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/prog_mem.vhd                                ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/Register_File.vhd                           ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/SignExtend.vhd                              ;
+; ../project_1/project_1.srcs/sources_1/imports/mips-master/zero_extend.vhd                             ;
+; ../project_1/project_1.srcs/sources_1/new/ALU_add.vhd                                                 ;
+; ../project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd                                             ;
+; ../project_1/project_1.srcs/sources_1/new/bus_interface.vhd                                           ;
+; ../project_1/project_1.srcs/sources_1/new/data_memory.vhd                                             ;
+; ../project_1/project_1.srcs/sources_1/new/debouncer.vhd                                               ;
+; ../project_1/project_1.srcs/sources_1/new/Frequency_Divider.vhd                                       ;
+; ../project_1/project_1.srcs/sources_1/new/HEX.vhd                                                     ;
+; ../project_1/project_1.srcs/sources_1/new/LEDR.vhd                                                    ;
+; ../project_1/project_1.srcs/sources_1/new/MIPS.vhd                                                    ;
+; ../project_1/project_1.srcs/sources_1/new/MIPS_System.vhd                                             ;
+; ../project_1/project_1.srcs/sources_1/new/sw_module.vhd                                               ;
+; ../project_1/project_1.srcs/sources_1/new/Top_Module.vhd                                              ;
+; /home/jam/altera/quartus/linux64/assignment_defaults.qdf                                              ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/addr_decoder.vhd   ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALU.vhd            ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/alu_sum_res.vhd    ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ALUdecoder.vhd     ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/ControlUnit.vhd    ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/displacement.vhd   ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/MainDecoder.vhd    ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_5bits.vhd ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Mux_2to1_32b.vhd   ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/mux_4_32b.vhd      ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/PC.vhd             ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/prog_mem.vhd       ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/Register_File.vhd  ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/SignExtend.vhd     ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/imports/mips-master/zero_extend.vhd    ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/ALU_add.vhd                        ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Basic_Timer.vhd                    ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/bus_interface.vhd                  ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/data_memory.vhd                    ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/debouncer.vhd                      ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Frequency_Divider.vhd              ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/HEX.vhd                            ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/LEDR.vhd                           ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS.vhd                           ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/MIPS_System.vhd                    ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/sw_module.vhd                      ;
+; /home/jam/Downloads/MIPScpu/project_1/project_1.srcs/sources_1/new/Top_Module.vhd                     ;
+; ewfaew.qpf                                                                                            ;
+; ewfaew.qsf                                                                                            ;
++-------------------------------------------------------------------------------------------------------+
+
+

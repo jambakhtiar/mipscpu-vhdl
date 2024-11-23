@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "tb_addr_decoder_behav" "xil_defaultlib.tb_addr_decoder" -log "elaborate.log" 
